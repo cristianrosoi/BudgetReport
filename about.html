@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>BudgetRaport</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="robots" content="index,follow">  
+	<meta name="description" content="A personal finance app which let you quickly visualize your budget inputs and outputs.">
+	<meta name="subject" content="Personal Finance">
+	<meta name="keywords" content="budget, report, cashflow, income, expenses">
+	<meta name="author" content="Cristian Rosoi">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<meta name="apple-mobile-web-app-capable" content="yes">
+ 	<meta name="apple-mobile-web-app-status-bar-style" content="black">  
+ 	<meta name="mobile-web-app-capable" content="yes">
+ 	 
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat|Orbitron' rel='stylesheet' type='text/css'>
+	
+	<link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+  	<link rel="manifest" href="manifest.json">
+	<link rel="icon" sizes="192x192" href="img/icons/icon-192x192.png">
+  	<link rel="icon" sizes="128x128" href="img/icons/icon-128x128.png">
+	<link rel="apple-touch-icon" href="img/icons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/icons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/icons/apple-touch-icon-152x152.png">
+	
+	<!-- STARTUP IMAGES -->
+
+    <!-- iPad retina portrait startup image -->
+    <link href="img/startup/apple-touch-startup-image-1536x2008.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad retina landscape startup image -->
+    <link href="img/startup/apple-touch-startup-image-2048x1496.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina portrait startup image -->
+    <link href="img/startup/apple-touch-startup-image-768x1004.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 1)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina landscape startup image -->
+    <link href="img/startup/apple-touch-startup-image-1027x748.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 1)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus portrait startup image -->
+    <link href="img/startup/apple-touch-startup-image-1242x2148.png"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus landscape startup image -->
+    <link href="img/startup/apple-touch-startup-image-2208x1182.png"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 startup image -->
+    <link href="img/startup/apple-touch-startup-image-750x1294.png"
+          media="(device-width: 375px) and (device-height: 667px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 5 startup image -->
+    <link href="img/startup/apple-touch-startup-image-640x1096.png"
+          media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 retina startup image -->
+    <link href="img/startup/apple-touch-startup-image-640x920.png"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 non-retina startup image -->
+    <link href="img/startup/apple-touch-startup-image-320x460.png"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">  			
+</head>
+<body id="finance">
+
+
+<!-- FINANCE CONTAINER
+===============================================================-->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Budget Report</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left"> 
+        <li id="create_new_report_btn"><a href="finance.html">Create New Report</a></li>
+      	<li><a href="about.html">About</a></li>
+      	<li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+    	<!--<li><a href="#" type="button" data-toggle="modal" data-target="#signinmodal">Sign In</a></li>-->
+  	  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<main>
+	
+		<div class="cover">
+
+			<div class="jumbotron text-center">
+				<!--<p id="login" type="button" data-toggle="modal" data-target="#signinmodal"><span id="signin">Sign in</span></p>-->	
+				<h2>About Budget Report App</h2>
+				<ul class="list-unstyle list-inline">
+				<li><a href="index.html" class="btn btn-transparent">Home</a></li>
+				<li><a href="finance.html" id="report-button" class="btn btn-transparent">Create new report</a></li>
+				</ul>		
+			</div>
+		</div>
+
+
+		<!-- SING IN MODAL -->
+		<div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title text-center" id="myModalLabel">Sign In</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1" class="sr-only">Email address</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+				  </div>
+
+				  <div class="form-group">
+				    <label for="exampleInputPassword1" class="sr-only">Password</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				  </div>  
+				</form>
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Sign In</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+		<!-- Main Content
+		===============================================================-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-8 col-md-offset-2">
+					<h2>Info</h2>		
+					<hr class="hr">
+					<p><strong>Version:</strong> 1.0</p>					
+					<p><strong>Requirements: </strong>In order to work properly please upgrade your browser to the latest version.</p>
+					<p><strong>Description: </strong>This is a personal finance app which can be used to organize and vizualise your budget inputs and outputs. The apps also generates a quick small report regarding your personal finance situation.</p>
+					<p><strong>How does it works: </strong>Users input data through the forms in order to process it and return a quick cash-flow analysis report. The app uses the browser to temporarily save the data per session. If the page is reloaded, the data will be retrived from the browser's session storage, otherwise if the browser is closed the data will be lost.</p>
+					<h2>How to use the app</h2>
+					<hr class="hr">
+
+					<img class="img-responsive" src="img/howtouse.png" alt="instructions image" style="border: 1px solid #ccc">
+
+					<h3>Input fields</h3>
+					<p><strong>Month input field: </strong> Type in a month (i.e. July);</p>
+					<p><strong>Currency input field: </strong> Type in a currency (i.e. USD, GBP, EUR etc.);</p>
+					<p><strong>Cash-flow output: </strong> Here you will see the value of your current cash-flow;</p>
+					<p><strong>Income left input field: </strong> Type in your income name (i.e. salary, bonus, dividends etc.);</p>
+					<p><strong>Income right input field: </strong> Type in your income value without formating the numbers (i.e. 1000, 2000, 3000). The currency will be added automatically so don't type it in here.;</p>
+					<p><strong>Expense left input field: </strong> Type in your expense name (i.e. bills, food, trip etc.);</p>
+					<p><strong>Expense right input field: </strong> Type in your expense value without formating the numbers (i.e. 1000, 2000, 3000). The currency will be added automatically so don't type it in here.;</p>
+
+					<h3>Buttons</h3>
+					<p><strong>Add button: </strong> Press the plus button to add a new income or expense value;</p>
+					<p><strong>Remove button: </strong> Press the red "-" button from each value output field to remove that output. Notice that the cash-flow will be automatically updated;</p>
+					<p><strong>Home button: </strong> Press the home button to navigate to the home page;</p>
+					<p><strong>Show report button: </strong> Press the show report button only after you filled in all the fields below it. It will take you to the report page;</p>
+					<p><strong>Create new report button: </strong> This will reset the app for a new set of data to be introduced. 
+
+					
+				</div>
+			</div>
+
+			<div class="row">
+				<br>
+			</div>
+		</div>
+	
+</main>
+
+
+	
+
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+<script type="text/javascript" src="js/budget-report.js"></script>
+</body>
+</html>
